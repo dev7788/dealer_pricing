@@ -80,7 +80,14 @@ class User extends CI_Controller {
 			} else {
 				$this->session->set_userdata('user_details',$return);
 			}
-            redirect( base_url().'user/profile', 'refresh');
+			$user_type = $_SESSION['user_details'][0]->user_type;
+			log_message('debug', 'user_type: '.$user_type);
+			if ($user_type == "admin") {
+                redirect( base_url().'user/profile', 'refresh');
+            } else {
+			    log_message('debug', 'redirect to home page');
+                redirect( base_url().'home', 'refresh');
+            }
         }
     }
 
@@ -251,7 +258,7 @@ class User extends CI_Controller {
             $id = $this->session->userdata ('user_details')[0]->users_id;
         }
         $data['user_data'] = $this->User_model->get_users($id);
-        $this->load->view('include/header'); 
+        $this->load->view('include/header');
         $this->load->view('profile', $data);
         $this->load->view('include/footer');
     }

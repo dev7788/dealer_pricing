@@ -112,11 +112,11 @@
                     <li class="<?=($this->router->class==="setting")?"active":"not-active"?>">
                         <a href="<?php echo base_url("setting"); ?>"><i class="fa fa-cogs"></i> <span>Settings</span></a>
                     </li>
-         
+
                     <!-- <li class="<?php //echo ($this->router->class==="Templates")?"active":"not-active"?>">
                         <a href="<?php //echo base_url("Templates"); ?>"><i class="fa fa-cubes"></i> <span>Templates</span></a>
                     </li> -->
-                  <?php }  /*if(CheckPermission("invoice", "own_read")){ ?>   
+                  <?php }  /*if(CheckPermission("invoice", "own_read")){ ?>
                     <li class="<?=($this->router->class==="invoice")?"active":"not-active"?>">
                         <a href="<?php echo base_url("invoice/view"); ?>"><i class="fa fa-list-alt"></i> <span>Invoice</span></a>
                     </li>

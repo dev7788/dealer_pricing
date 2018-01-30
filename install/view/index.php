@@ -312,7 +312,7 @@
                     </div>
                     <div class="progress-main-div">
                         <div class="col-md-12">
-                            Updated version of this script is available at <a href="https://www.webprojectbuilder.com/item/user-login-and-management/?ref=local" target="_blank">www.webprojectbuilder.com</a><br> 
+<!--                            Updated version of this script is available at <a href="https://www.webprojectbuilder.com/item/user-login-and-management/?ref=local" target="_blank">www.webprojectbuilder.com</a><br>-->
                         </div>
                     </div>
                 </div>

@@ -33,7 +33,7 @@
                   </li>
                   <li id="permis">
                     <a href="#permissionSetting" data-toggle="tab">
-                      <i class="fa fa-indent" aria-hidden="true"></i> 
+                      <i class="fa fa-indent" aria-hidden="true"></i>
                       <span>Permission</span>
                     </a>
                   </li>
