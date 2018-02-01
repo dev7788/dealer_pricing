@@ -39,12 +39,12 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <script src="<?php echo base_url('assets/js/ajax-loading.js'); ?>"></script>
     <script src="<?php echo base_url('assets/js/home.js')?>"></script>
 </head>
 <body>
     <div class="container">
-        <form class="form" role="form">
+        <form class="form" role="form" id="myform">
             <div class="row" style="margin-top: 30px;">
                 <div class="form-group col-md-3">
                     <label for="project-name" class="control-label ">Project Name/Address</label>
@@ -170,7 +170,10 @@
                     <p><label>Dealer Profit:</label> <span id="dealer_profit"></span></p>
                 </div>
             </div>
-
+            <div class="row">
+                <input id="submit" type="submit" value="PRINT" class="btn btn-success" style="float: right;">
+                <div id="alert" >Success!</div>
+            </div>
         </form>
     </div>
 </body>

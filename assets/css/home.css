@@ -6,3 +6,11 @@
 .output-box {
     margin-top: 50px;
 }
+
+#alert {
+    float: right;
+    margin-right: 10px;
+    font-size: 16px;
+    display: none;
+    margin-top: 5px;
+}

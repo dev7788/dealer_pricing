@@ -1,5 +1,9 @@
 $(document).ready(function() {
-   $('.project_attr').change(function () {
+
+    var loading = $.loading();
+    loading.ajax(true);
+
+    $('.project_attr').change(function () {
        var id = $(this).attr('id');
        var value = $(this).val()
 
@@ -149,8 +153,44 @@ $(document).ready(function() {
        var l50 = l48 - f47
        $('#dealer_profit').text('$' + l50.toFixed(2))
    })
+
+    $('form').on('submit', function(e){
+        e.preventDefault();
+        $('#alert').css({'display': 'none'})
+
+        var dt = $('#myform').serialize();
+        console.log(dt);
+        dt = dt + "&total_job_cost=" + $('#total_job_cost').text()
+        dt = dt + "&per_lineal_ft=" + $('#per_lineal_ft').text()
+        dt = dt + "&display_price=" + $('#display_price').text()
+        dt = dt + "&retail_price=" + $('#retail_price').text()
+        dt = dt + "&dealer_profit=" + $('#dealer_profit').text()
+
+        console.log(dt);
+
+        var url = '/home/generateInvoice';
+
+        $.ajax({
+            type:'post',
+            url: url,
+            data: dt,
+            success:function(result){
+                var result = JSON.parse(result)
+                if (result.status == 'success') {
+                    $('#alert').html('Generated an invoice successfully.');
+                    $('#alert').css({'color': 'green', 'display': 'block'});
+                } else {
+                    $('#alert').html('Failed generating. Please try again.');
+                    $('#alert').css({'color': 'red', 'display': 'block'})
+                }
+
+            }
+        });
+    });
 });
 
 function round(value, decimals) {
     return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
 }
+
+
